@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="comportamento.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>TManager</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <form id="form-task" action="#">
+                <fieldset>
+                    <legend><b>Task Manager</b></legend>
+                    <br>
+                    <div class="inputBox">
+                        <input type="text" autocomplete="off" name="descricao" id="descricao" class="inputUser"
+                            required>
+                        <label for="descricao" class="labelInput">Descrição</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="text" autocomplete="off" name="responsavel" id="responsavel" class="inputUser"
+                            required>
+                        <label for="responsavel" class="labelInput">Responsável</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="number" name="nivel" id="nivel" class="inputUser" required>
+                        <label for="nivel" class="labelInput">Nível</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="text" autocomplete="off" name="situacao" id="situacao" class="inputUser" required>
+                        <label for="situacao" class="labelInput">Situação</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="number" name="prioridade" id="prioridade" class="inputUser" required>
+                        <label for="prioridade" class="labelInput">prioridade</label>
+                    </div>
+                    <input type="submit" id="submit" value="Enviar">
+                </fieldset>
+            </form>
+        </div>
+        <div class="tarefas">
+            <h2>Tarefas cadastradas</h2>
+            <ul id="list-task"></ul>
+        </div>
+    </div>
+</body>
+</html>
