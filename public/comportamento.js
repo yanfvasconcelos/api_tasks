@@ -1,4 +1,4 @@
-const baseURL = 'http://127.0.0.1:8000/tasks'
+const baseURL = 'http://127.0.0.1:8000/tasks/'
 
 let tasks = []
 
@@ -25,7 +25,7 @@ function atualizar_tela() {
                 return
             }
 
-            const response = await fetch(baseURL + '/' + tarefa.id + '/iniciar', { method: 'PUT' })
+            const response = await fetch(baseURL + tarefa.id + '/iniciar', { method: 'PUT' })
 
             if (response.ok) {
                 alert('Tarefa iniciada com sucesso!')
@@ -46,7 +46,7 @@ function atualizar_tela() {
                 return
             }
 
-            const response = await fetch(baseURL + '/' + tarefa.id + '/pender', { method: 'PUT' })
+            const response = await fetch(baseURL + tarefa.id + '/pendente', { method: 'PUT' })
 
             if (response.ok) {
                 alert('Tarefa parada com sucesso!')
@@ -67,7 +67,7 @@ function atualizar_tela() {
                 return
             }
 
-            const response = await fetch(baseURL + '/' + tarefa.id + '/cancelar', { method: 'PUT' })
+            const response = await fetch(baseURL + tarefa.id + '/cancelar', { method: 'PUT' })
 
             if (response.ok) {
                 alert('Tarefa cancelada com sucesso!')
@@ -88,7 +88,7 @@ function atualizar_tela() {
                 return
             }
 
-            const response = await fetch(baseURL + '/' + tarefa.id + '/resolver', { method: 'PUT' })
+            const response = await fetch(baseURL + tarefa.id + '/resolver', { method: 'PUT' })
 
             if (response.ok) {
                 alert('Tarefa finalizada com sucesso!')
@@ -109,7 +109,7 @@ function atualizar_tela() {
                 return
             }
 
-            const response = await fetch(baseURL + '/' + tarefa.id, { method: 'DELETE' })
+            const response = await fetch(baseURL + tarefa.id, { method: 'DELETE' })
 
             if (response.ok) {
                 alert('Tarefa removida com sucesso!')
