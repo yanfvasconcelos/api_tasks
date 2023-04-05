@@ -1,7 +1,7 @@
 from typing import TypedDict
 
 from bson.objectid import ObjectId
-from decouple import Config
+from decouple import config
 from pymongo import MongoClient
 
 from ..presentation.viewmodels import Tarefa
@@ -18,7 +18,7 @@ class TarefaMongoDBRepository():
 
     def __init__(self):
         #connect to MongoDB
-        uri = Config('MONGODB_URL')
+        uri = config('MONGODB_URL')
         client = MongoClient(uri)
         db = client['mtasks']
         self.tasks = db['tasks']
