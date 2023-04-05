@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.presentation.controllers import filme_controller, usuario_controller
+from app.presentation.controllers import task_controller, user_controller
 
 app = FastAPI()
 
@@ -15,7 +15,7 @@ app.add_middleware(CORSMiddleware,
                    allow_headers=['*'])
 
 # Rotas e Controllers
-app.include_router(filme_controller.routes,
-                   prefix=filme_controller.prefix)
-app.include_router(usuario_controller.routes,
-                   prefix=usuario_controller.prefix)
+app.include_router(task_controller.router,
+                   prefix=task_controller.prefix)
+app.include_router(user_controller.router,
+                   prefix=user_controller.prefix)
