@@ -1,4 +1,4 @@
-FROM bitnami/python:3.11.2
+FROM bitnami/python:3.10.6
 WORKDIR /app
 
 COPY . /app
