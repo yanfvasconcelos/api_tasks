@@ -1,4 +1,4 @@
-const baseURL = 'http://127.0.0.1:8000/tasks/'
+const baseURL = 'https://api-tasks-pwdf.onrender.com/tasks'
 
 let tasks = []
 
