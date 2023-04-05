@@ -1,12 +1,21 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.presentation.controllers import task_controller, user_controller
+
+from app.presentation.controllers import filme_controller, usuario_controller
 
 app = FastAPI()
 
-origins = ['http://localhost:5500', 'http://127.0.0.1:5500', 'http://localhost:5500/public/', 'mongodb://localhost:27023']
+origins = ['http://localhost:5500',
+           'http://127.0.0.1:5500',]
 
-app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=['*'], allow_headers=['*'], expose_headers=['Access-Control-Allow-Origin'])
+app.add_middleware(CORSMiddleware,
+                   allow_origins=origins,
+                   allow_credentials=True,
+                   allow_methods=['*'],
+                   allow_headers=['*'])
 
-app.include_router(task_controller.router, prefix=task_controller.prefix)
-app.include_router(user_controller.router, prefix=user_controller.prefix)
+# Rotas e Controllers
+app.include_router(filme_controller.routes,
+                   prefix=filme_controller.prefix)
+app.include_router(usuario_controller.routes,
+                   prefix=usuario_controller.prefix)
