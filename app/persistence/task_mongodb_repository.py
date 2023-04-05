@@ -18,7 +18,8 @@ class TarefaMongoDBRepository():
 
     def __init__(self):
         #connect to MongoDB
-        client = MongoClient('mongodb://localhost:27023')
+        uri = Config('MONGODB_URL')
+        client = MongoClient(uri)
         db = client['mtasks']
         self.tasks = db['tasks']
         try:
